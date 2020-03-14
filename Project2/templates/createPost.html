@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block body %}
+<form action="" method="POST" class="form">
+    {{form.hidden_tag()}}
+    <div class="input">
+        {{form.title.label}}<br>
+        {% if form.title.errors %}
+            {% for error in form.title.errors %}
+            <span class="error">{{error}}</span><br>
+            {%endfor%}
+        {% endif %}
+        {{form.title(class="input-form")}}
+    </div>
+    <div class="input">
+        {{form.content.label}}<br>
+        {% if form.content.errors %}
+            {% for error in form.content.errors %}
+            <span class="error">{{error}}</span><br>
+            {%endfor%}
+        {% endif %}
+        {{form.content(class="input-form")}}
+    </div>
+    <div >
+        {{form.submit(class="submit")}}
+    </div>
+</form>
+{% endblock body%}

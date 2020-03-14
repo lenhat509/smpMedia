@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <h1>Profile</h1>
+    Username: {{current_user.get_name()}}<br>
+    Email   : {{current_user.get_email()}}<br>
+    Image: 
+    <img src="{{ url_for('static', filename=current_user.get_image()) }}" , style="width:100px;height:100px;">
+
+    <h1>Update Info: </h1>
+    <hr>
+    <form action="" method= 'POST' enctype="multipart/form-data">
+        {{form.hidden_tag()}}
+        <div>
+            {{form.username.label}}<br>
+            {% if form.username.errors %}
+                {% for error in form.username.errors %}
+                <span>{{error}}</span><br>
+                {%endfor%}
+            {% endif %}
+            {{form.username}}
+        </div>
+        <div>
+            {{form.email.label}}<br>
+            {% if form.email.errors %}
+                {% for error in form.email.errors %}
+                <span>{{error}}</span><br>
+                {%endfor%}
+            {% endif %}
+            {{form.email}}
+        </div>
+        <div>
+            {{form.picture.label}}<br>
+            {{form.picture}}<br>
+            {% if form.picture.errors %}
+                {% for error in form.picture.errors %}
+                <span>{{error}}</span><br>
+                {%endfor%}
+            {% endif %}<br>
+            
+        </div>
+        <div>
+            {{form.submit}}
+        </div>
+    </form>
+{% endblock body %}

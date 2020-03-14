@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+{% block body %}
+<form action="" method="POST" >
+    {{form.hidden_tag()}}
+    <div>
+        {{form.username.label}}<br>
+        {% if form.username.errors %}
+            {% for error in form.username.errors %}
+            <span>{{error}}</span><br>
+            {%endfor%}
+        {% endif %}
+        {{form.username}}
+    </div>
+    <div>
+        {{form.password.label}}<br>
+        {% if form.password.errors %}
+            {% for error in form.password.errors %}
+            <span>{{error}}</span><br>
+            {%endfor%}
+        {% endif %}
+        {{form.password}}
+    </div>
+    <div>
+        {{form.submit}}
+    </div>
+    <div>
+        {{form.remember}} {{form.remember.label}}
+    </div>
+    <a href="{{url_for('users.send_request')}}">Forgot Password?</a>
+</form>
+{% endblock body %}
