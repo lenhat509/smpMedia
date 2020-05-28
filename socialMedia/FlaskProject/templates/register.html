@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+{% block body %}
+    <form action="" method="POST" class="form">
+        {{form.hidden_tag()}}
+        <h1>Register</h1>
+        <div class="input">
+            {{form.username.label}}<br>
+            {% if form.username.errors %}
+                {% for error in form.username.errors %}
+                    <span class="error">{{error}}</span><br>
+                {%endfor%}
+            {% endif %}
+            {{form.username(class="input-form")}}
+        </div>
+        <div class="input">
+            {{form.email.label}}<br>
+            {% if form.email.errors %}
+                {% for error in form.email.errors %}
+                    <span class="error">{{error}}</span><br>
+                {%endfor%}
+            {% endif %}
+            {{form.email(class="input-form")}}
+        </div>
+        <div class="input">
+            {{form.password.label}}<br>
+            {% if form.password.errors %}
+                {% for error in form.password.errors %}
+                    <span class="error">{{error}}</span><br>
+                {%endfor%}
+            {% endif %}
+            {{form.password(class="input-form")}}
+        </div>
+        <div class="input">
+            {{form.confirm.label}}<br>
+            {% if form.confirm.errors %}
+                    {% for error in form.confirm.errors %}
+                        <span class="error">{{error}}</span><br>
+                    {%endfor%}
+            {% endif %}
+            {{form.confirm(class="input-form")}}
+        </div>
+        <div>
+            {{form.submit(class="submit")}}
+        </div>
+    </form>
+{% endblock body %}
