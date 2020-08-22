@@ -1,0 +1,6 @@
+{
+    "SECRET_KEY":"355dd4c20ac6e2f6b27e6e074e26f5ba",
+    "MAIL_USERNAME" : "Your email",
+    "MAIL_PASSWORD" : "Your password",
+    "SQLALCHEMY_DATABASE_URI":"mysql+pymysql://your_URI"
+}
