@@ -1,6 +1,7 @@
 import os
 import json
-file = open('C:\\Users\\Le Nhat\\VSC project\\Project2\\FlaskProject\\config.json', 'r')
+# create your own config.json file that contain your private info like secret-key, uri, email, password
+file = open('config.json', 'r')
 dic = json.load(file)
 class Config:
     SECRET_KEY = dic.get('SECRET_KEY')
