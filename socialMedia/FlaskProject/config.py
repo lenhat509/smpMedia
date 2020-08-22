@@ -1,6 +1,6 @@
 import os
 import json
-# create your own config.json file that contain your private info like secret-key, uri, email, password
+
 file = open('config.json', 'r')
 dic = json.load(file)
 class Config:
